@@ -55,9 +55,15 @@ npm run start
 ## Planned Enhancement
 
 1. Invoice
-2. Coupon
-3. Vendor Onboarding
-4. Payment Integration
+2. Cart
+3. Coupon
+4. Vendor Onboarding
+5. Payment Integration
+
+## Future Optimization.
+
+1. Redis Caching
+2. Message Queue
 
 ## Contribution
 
