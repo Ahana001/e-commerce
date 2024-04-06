@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import knex, {Knex} from 'knex';
 import dotenv from 'dotenv';
+import logger from '../utilities/logger/winston_logger';
 dotenv.config();
 
 export class DB {
@@ -21,36 +22,36 @@ async function seed() {
   const seedConfig = {
     directory: __dirname + '/seeds',
   };
-  console.log('Running seed...');
+  logger.info('Running seed...');
   await DB.write.seed.run(seedConfig).then((result: {}[][]) => {
-    console.log('Ran Seed', result);
+    logger.info('Ran Seed', result);
   });
-  console.log('Ran seed: Finish ');
+  logger.info('Ran seed: Finish ');
 }
 
 async function migrate() {
   const migrationConfig = {
     directory: __dirname + '/migrations',
   };
-  console.log('Running migrations...');
+  logger.info('Running migrations...');
   await DB.write.migrate.latest(migrationConfig).then((result: {}[][]) => {
     const log = result[1];
     if (!log.length) {
-      console.log('Database is already up to date');
+      logger.info('Database is already up to date');
     } else {
-      console.log('Ran migrations:>> ');
+      logger.info('Ran migrations:>> ');
       for (let i = 0; i < log.length; i++) {
-        console.log(i + 1 + '=> ' + log[i]);
+        logger.info(i + 1 + '=> ' + log[i]);
       }
-      console.log('Ran Migration Count: ', result[0]);
+      logger.info('Ran Migration Count: ', result[0]);
     }
   });
-  console.log('Ran migrations: Finish ');
+  logger.info('Ran migrations: Finish ');
 }
 
 export async function connectdb() {
   try {
-    console.log('Database connecting... ');
+    logger.info('Database connecting... ');
 
     const configOptions: Knex.Config = {
       client: 'pg',
@@ -77,29 +78,29 @@ export async function connectdb() {
     };
     DB.write = knex(configOptions);
     await DB.write.raw("SELECT 'write db connected' AS status");
-    console.log('Write Database connected');
+    logger.info('Write Database connected');
 
     (configOptions.connection as Knex.PgConnectionConfig).host =
       process.env.DB_READ_HOST;
     DB.read = knex(configOptions);
     await DB.read.raw("SELECT 'readt db connected' AS status");
-    console.log('Read Database connected');
+    logger.info('Read Database connected');
   } catch (error) {
-    console.log('Database Connection Error!!');
+    logger.error('Database Connection Error!!');
     throw error;
   }
 
   try {
     await migrate();
   } catch (error) {
-    console.log('Migration Error !!');
+    logger.error('Migration Error !!');
     throw error;
   }
 
   try {
       await seed();
   } catch (error) {
-    console.log('Error in running seed', error);
+    logger.error('Error in running seed', error);
     throw error;
   }
   return;

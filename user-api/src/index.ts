@@ -8,6 +8,7 @@ import routes from './module';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './utilities/swagger_docs';
+import logger from './utilities/logger/winston_logger';
 
 async function app() {
   await connectdb();
@@ -57,8 +58,8 @@ async function app() {
   
   const port = process.env.SERVER_PORT || 8080;
   server.listen(port, () => {
-    console.log(`server starts on port.. ${port}...`);
-    console.log(`Seving API DOC >> http://localhost:${port}/user/swagger`);
+    logger.info(`server starts on port.. ${port}...`);
+    logger.info(`Seving API DOC >> http://localhost:${port}/user/swagger`);
   });
 }
 app();

@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 import {connectdb} from '../../data/knex';
 import {DB} from '../../data/knex';
 import fs from 'fs';
+import logger from '../../utilities/logger/winston_logger';
 
 const knex = require('knex')({
   client: 'pg',
@@ -32,7 +33,7 @@ export function expireToken(entity: {}) {
 export async function createEmptyTestDatabase() {
   try {
     await connectdb();
-    console.log('-- Test Database already exists, Dropping current DB and creating new instance ---')
+    logger.info('-- Test Database already exists, Dropping current DB and creating new instance ---')
     await knex.raw(
       `DROP DATABASE ${process.env.DB_DATABASE || 'user_test_db'}  WITH (FORCE)`
     );
@@ -41,7 +42,7 @@ export async function createEmptyTestDatabase() {
     );
     await connectdb();
   } catch (error) {
-    console.log('-- Test Database does not exits, creating new database --');
+    logger.info('-- Test Database does not exits, creating new database --');
     await knex.raw(
       `CREATE DATABASE ${process.env.DB_DATABASE || 'user_test_db'}`
     );
@@ -65,10 +66,10 @@ export async function loadMockSeedData(sqlDumpName: string) {
   await DB.write.raw(
     fs.readFileSync(`src/test/seed/${sqlDumpName}.sql`).toString()
   );
-  console.log('~~~~MOCK DATA READY~~~~')
+  logger.info('~~~~MOCK DATA READY~~~~')
 }
 
 export async function loadMockSeedDataFromPath(path: string) {
   await DB.write.raw(fs.readFileSync(path).toString());
-  console.log('~~~~MOCK DATA READY~~~~');
+  logger.info('~~~~MOCK DATA READY~~~~');
 }

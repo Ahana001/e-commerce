@@ -6,9 +6,10 @@
 - **Database:** PostgreSQL
 - **Code Editor and tools**: VS Code
 - **Unit Testing**: Jest
-
+- **Logging**: Winston Logger
 
 ## Folder Structure 📒
+
 <pre>
     |───order-api
     |───product-api
@@ -17,7 +18,6 @@
 </pre>
   <br />
 
-
 ## To Start Project
 
 **PostgreSQL Install**
@@ -25,7 +25,7 @@ https://www.pgadmin.org/download/
 
 ## How To Run Locally
 
- To start contributing, follow the below guidelines:
+To start contributing, follow the below guidelines:
 
 **1.** Fork [this](https://github.com/Ahana001/e-commerce.git) repository.
 
@@ -50,6 +50,7 @@ cd user-api
 ```
 
 **6.** execute below command
+
 ```
 npm run start
 ```
@@ -70,6 +71,7 @@ npm run start
 ## Contribution
 
 **Create Migration**
+
 ```
 knex migrate:make migration_name --knexfile path/to/your/knexfile.js
 
@@ -78,8 +80,3 @@ knex migrate:make customer --knexfile src/data/knex.ts
 # or
 npx knex migrate:make customer --knexfile src/data/knex.ts
 ```
-
-
-
-
-
