@@ -1,0 +1,16 @@
+/order-api/node_modules
+/order-api/node_modules/*
+
+/product-api/node_modules
+/product-api/node_modules/*
+
+/user-api/node_modules
+/user-api/node_modules/*
+
+/order-api/.env
+/product-api/.env
+/user-api/.env
+
+/order-api/.env.test
+/product-api/.env.test
+/user-api/.env.test
