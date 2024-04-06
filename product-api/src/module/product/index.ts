@@ -12,7 +12,6 @@ admin_routes.put('/:id', admin_controller.admin_updateProduct);
 admin_routes.delete('/:id', admin_controller.admin_deleteProduct);
 admin_routes.post('/', admin_controller.admin_createProduct);
 admin_routes.get('/', admin_controller.admin_readProducts);
-admin_routes.post('/update', admin_controller.admin_readProducts);
 
 customer_routes.get('/', customer_controller.readProducts);
 

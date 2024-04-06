@@ -7,6 +7,15 @@
 /user-api/node_modules
 /user-api/node_modules/*
 
+/order-api/build
+/order-api/build/*
+
+/product-api/build
+/product-api/build/*
+
+/user-api/build
+/user-api/build/*
+
 /order-api/.env
 /product-api/.env
 /user-api/.env

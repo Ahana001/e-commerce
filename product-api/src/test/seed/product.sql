@@ -8,9 +8,9 @@ INSERT INTO PUBLIC.product(
     created_at,
     updated_at
 )VALUES(
-    'PROD_1',
-    'ball',
-    'ball',
+    'PROD_10015',
+    'bat',
+    'bat',
     20,
     40,
     false,

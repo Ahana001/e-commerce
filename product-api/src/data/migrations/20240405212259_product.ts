@@ -15,7 +15,7 @@ export async function up(knex: Knex): Promise<void> {
             "name" VARCHAR NOT NULL,
             "description" VARCHAR NULL,
             "price" numeric(9, 2) NOT NULL,
-            "stock" INTEGER NOT NULL DEFAULT 0,
+            "stock" INTEGER NOT NULL DEFAULT '0',
             "is_deleted" BOOLEAN NOT NULL DEFAULT false,
             "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
             "updated_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,

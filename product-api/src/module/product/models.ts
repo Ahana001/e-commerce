@@ -57,7 +57,7 @@ export async function createProduct(
     .insert(product)
     .returning('*');
   if (trx) {
-    query.transacting(trx);
+    query.transacting(trx)
   }
   return await query
     .then((products: IProduct[]) => {
@@ -65,6 +65,7 @@ export async function createProduct(
       return products[0];
     })
     .catch((error: Error) => {
+      console.log(error)
       console.log('GOT ERROR WHILE CREATING PRODUCT');
       throw error;
     });
