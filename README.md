@@ -44,15 +44,21 @@ npx knex migrate:make customer --knexfile src/data/knex.ts
 git clone https://github.com/Ahana001/e-commerce.git
 ```
 
-**3.** Navigate to the project directory :file_folder: .
+**3.** Navigate to the project directory.
 
 ```
 cd e-commerce
 ```
 
-**4.** set up .env
+**4.** set up .env for any service
 
-**5.** execute below command
+**5.** Navigate to the project directory.
+
+```
+cd user-api
+```
+
+**6.** execute below command
 ```
 npm run start
 ```
