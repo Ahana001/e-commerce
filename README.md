@@ -21,17 +21,6 @@
 **PostgreSQL Install**
 https://www.pgadmin.org/download/
 
-
-**Create Migration**
-```
-knex migrate:make migration_name --knexfile path/to/your/knexfile.js
-
-# create customer migration
-knex migrate:make customer --knexfile src/data/knex.ts
-# or
-npx knex migrate:make customer --knexfile src/data/knex.ts
-```
-
 ## How To Run Locally
 
  To start contributing, follow the below guidelines:
@@ -69,6 +58,19 @@ npm run start
 2. Coupon
 3. Vendor Onboarding
 4. Payment Integration
+
+## Contribution
+
+**Create Migration**
+```
+knex migrate:make migration_name --knexfile path/to/your/knexfile.js
+
+# create customer migration
+knex migrate:make customer --knexfile src/data/knex.ts
+# or
+npx knex migrate:make customer --knexfile src/data/knex.ts
+```
+
 
 
 
