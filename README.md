@@ -2,7 +2,7 @@
 
 - **Backend:** NodeJs
 - **Language:** Typescript
-- **Library:** Joi(Request Validation) Knex.js(database interactions)
+- **Library:** Joi(Request Validation) Knex.js(database interactions) JWT(Authentication and Authorization)
 - **Database:** PostgreSQL
 - **Code Editor and tools**: VS Code
 - **Unit Testing**: Jest
