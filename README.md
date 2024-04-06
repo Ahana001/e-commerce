@@ -2,7 +2,7 @@
 
 - **Backend:** NodeJs
 - **Language:** Typescript
-- **Library:** Joi(Request Validation) Knex.js(database interactions)
+- **Library:** Joi(Request Validation) Knex.js(database interactions) JWT(Authentication and Authorization)
 - **Database:** PostgreSQL
 - **Code Editor and tools**: VS Code
 - **Unit Testing**: Jest
@@ -53,6 +53,11 @@ cd user-api
 
 ```
 npm run start
+```
+
+**6.** Execute Test case
+```
+npm run test_watch
 ```
 
 ## Planned Enhancement
