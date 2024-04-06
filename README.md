@@ -5,6 +5,8 @@
 - **Library:** Joi(Request Validation) Knex.js(database interactions)
 - **Database:** PostgreSQL
 - **Code Editor and tools**: VS Code
+- **Unit Testing**: Jest
+
 
 ## Folder Structure 📒
 <pre>
