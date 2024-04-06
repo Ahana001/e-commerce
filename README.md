@@ -63,6 +63,13 @@ cd user-api
 npm run start
 ```
 
+## Planned Enhancement
+
+1. Invoice
+2. Coupon
+3. Vendor Onboarding
+4. Payment Integration
+
 
 
 
