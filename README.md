@@ -54,6 +54,11 @@ cd user-api
 npm run start
 ```
 
+**6.** Execute Test case
+```
+npm run test_watch
+```
+
 ## Planned Enhancement
 
 1. Invoice
